@@ -1,0 +1,44 @@
+<template name="cyberpunk">
+<div class="jumbotron">
+  <h1>cyberpunk</h1>
+</div>
+</template>
+
+<template name="fuckness">
+<div class="jumbotron">
+  <h1>fuckness</h1>
+</div>
+</template>
+
+<template name="home">
+<div class="jumbotron">
+  <h1>Too Fucking Future</h1>
+</div>
+</template>
+
+<template name="muzak">
+<div class="span12 abyss">
+    <h1 style="text-align:center">Muzask</h1>
+    {{#if livecontent}}
+    {{{livecontent}}}
+    {{else}}
+    <table class="table table-bordered table-condensed table-features">
+        {{#each features}}
+        {{> feature_entry}}
+        {{/each}}
+    </table>
+    {{/if}}
+</div>
+</template>
+
+<template name="pron">
+<div class="jumbotron">
+  <h1>pron</h1>
+</div>
+</template>
+
+<template name="vilm">
+<div class="jumbotron">
+  <h1>vilm</h1>
+</div>
+</template>
