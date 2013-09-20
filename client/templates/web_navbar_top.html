@@ -1,0 +1,18 @@
+<template name="web_navbar_top">
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+            <ul class="nav" style="width:100%">
+                <li><img id="dash-gear" src="../../images/terminal.gif" height="30px" width="30px" vertical-align="middle" style="padding-top:15%;"></li>
+                {{#each navbar_elems}}
+                <li {{#if active}}class="active"{{/if}}>{{> navbar_elem}}</li>
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+</div>
+</template>
+
+<template name="navbar_elem">
+<a href={{name}}>{{formatted_name}}</a>
+</template>

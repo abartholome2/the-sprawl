@@ -1,0 +1,57 @@
+.span12.abyss {
+    border-width: 10px;
+    border-radius: 10px;
+    border-color: #8F8FB2 #000000;
+    background-color: #525266;
+    opacity:0.88;
+    margin-left:0px;
+}
+
+.table.table-features {
+    margin-left: 2.5%;
+    width:95%;
+    background-color: #ccc;
+}
+
+.jumbotron {
+    margin: 80px 0;
+    text-align: center;
+}
+.jumbotron h1 {
+    font-size: 100px;
+    color: white;
+    line-height: 1;
+    text-shadow: 4px 4px 4px #000;
+}
+.jumbotron h2 {
+    font-size: 100px;
+    line-height: 1;
+}
+.jumbotron .lead {
+    font-size: 24px;
+    line-height: 1.25;
+}
+.jumbotron .btn {
+    font-size: 21px;
+    padding: 14px 24px;
+}
+
+.featurette {
+    margin: 40px 0;
+    text-align: left;
+}
+.featurette h1 {
+    color: white;
+    font-size: 60px;
+    line-height: 1;
+    text-shadow: 4px 4px 4px #000;
+}
+
+.featurette .lead {
+    font-size: 24px;
+    line-height: 1.25;
+}
+.featurette .btn {
+    font-size: 21px;
+    padding: 14px 24px;
+}
