@@ -1,31 +1,34 @@
-<template name="footer">
-  <div class="footer">
-    <p>&copy; 3DCum Company LLC 20xx</p>
-  </div>
-</template>
+<template name="setup"></template>
 
-<template name="feature_entry">
-<tr>
-    <td>{{thumbnail}}</td>
-    <td><a href="{{baseurl}}/{{pagecontent}}">{{title}}</a></td>
-    <td>{{date_created}}</td>
-    <td>{{rating}}</td>
-    <td class="upvote" id={{_id}}>*</td>
-    <td class="downvote" id={{_id}}>*</td>
-</tr>
-</template>
+<template name="home">
+{{>setup}}
+{{> web_navbar_top}}
+<div id="gameContainer">
+  <canvas id="game"  width="100%"  height="100%" >
+    <blink>Loading...</blink>
+  </canvas>
+  <canvas id="scratch" style="display: none;" width="512" height="512">
 
-<template name="base_page">
-<div class="container-fluid">
-  <div class="row-fluid">
-    {{> web_navbar_top}}
-    {{> content}}
-    {{> footer}}
-  </div>
+  </canvas>
 </div>
 </template>
 
-<template name="content">
-{{{html}}}
+<template name="login_alert">
+<div class="alert">
+    <strong> Please Log-In </strong>
+    <a href={{home}}>{{home}}</a>
+</div>
 </template>
 
+<template name="invalid_session_alert">
+<div class="alert">
+    <strong> Invalid Session </strong>
+</div>
+</template>
+
+<template name="notfound">
+{{> web_navbar_top}}
+<div id="outer">
+  <h1>404 Page Not Found</h1>
+</div>
+</template>

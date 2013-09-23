@@ -1,23 +1,40 @@
-Template.content.html = function() {
-    return Template[Session.get('page')]();
-}
+Template.home.rendered = function() {
+    var app = new GfxApp('game');
+    console.log(app);
+    app.init(function() {
+        setInterval(function() { app.render(); }, 1000/30);
+        setInterval(function() { app.tick(); }, 1000/30);
+        // app.scene.camera.setLocation([0, 1000, -10]);
 
-Template.feature_entry.baseurl = function() {
-    return Meteor.absoluteUrl()+Session.get('page');
-}
-Template.feature_entry.events({
-    'click .upvote' : function(obj) {
-        Meteor.call('upvote_feature', obj.toElement.id);
-        Meteor.call('fetch_content_features', Session.get('page'), function(error, result) {
-            if (error) return;
-            Session.set('feature_list', result);
-        });
-    },
-    'click .downvote' : function(obj) {
-        Meteor.call('downvote_feature', obj.toElement.id);
-        Meteor.call('fetch_content_features', Session.get('page'), function(error, result) {
-            if (error) return;
-            Session.set('feature_list', result);
-        });
+        // app.resources.onAllAssetsLoaded(function() {
+        // var landscapeController = LandscapeController.Create(app);    
+            // app.resources.onAllAssetsLoaded(function() {
+                // app.overlay.removeItem(backdrop);
+                // app.overlay.removeItem(backdropspinner);
+                // clearInterval(spinnerInterval);    
+            // });
+        // });
+    });
+};
+
+Template.setup.rendered = function() {
+    if (!window._gaq) {
+        window._gaq = [];
+        _gaq.push(['_setAccount', 'UA-44237266-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+        ga = document.createElement('script'); 
+        ga.type = 'text/javascript'; 
+        ga.async = true;
+        gajs = '.google-analytics.com/ga.js';
+        ga.src = ('https:' == document.location.protocol) ? 'https://ssl'+gajs : 'http://www'+gajs; 
+        s = document.getElementsByTagName('script')[0]; 
+        s.parentNode.insertBefore(ga, s);
+        })();
     }
-});
+};
+
+Template.login_alert.home = function() {
+    return Meteor.absoluteUrl();
+};
